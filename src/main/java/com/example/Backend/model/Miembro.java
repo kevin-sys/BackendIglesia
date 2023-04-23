@@ -15,12 +15,12 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "miembro")
 public class Miembro {
-
+    
+    @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Id
     @Column(name = "identificacion", nullable = false, length = 15)
     private String identificacion;
 
