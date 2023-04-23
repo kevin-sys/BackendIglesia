@@ -1,5 +1,6 @@
 package com.example.Backend.model;
 
+import java.util.Date;
 import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,24 +16,38 @@ import javax.persistence.Table;
 @Table(name = "miembro")
 public class Miembro {
 
-    @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column
+
+    @Id
+    @Column(name = "identificacion", nullable = false, length = 15)
     private String identificacion;
-    @Column
-    private String nombre;
-    @Column
-    private String sexo;
 
+    @Column(name = "nombres", nullable = false, length = 50)
+    private String nombres;
 
-    @Column
-    private String fechaNacimiento;
-    @Column
+    @Column(name = "apellidos", nullable = false, length = 50)
+    private String apellidos;
+
+    @Column(name = "edad", nullable = false, scale = 2)
+    private int edad;
+
+    @Column(name = "direccion", nullable = false, length = 100)
     private String direccion;
-    @Column
+
+    @Column(name = "telefono", nullable = false, length = 10)
     private String telefono;
+
+    @Column(name = "categoria", nullable = false, length = 15)
+    private String categoria;
+
+    @Column(name = "estado", nullable = false, length = 10)
+    private String estado;
+
+    @Column(name = "fecharegistro")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fecharegistro;
 
     public int getid() {
         return id;
@@ -43,11 +58,11 @@ public class Miembro {
     }
 
     public String getnombre() {
-        return nombre;
+        return nombres;
     }
 
-    public void setnombre(String nombre) {
-        this.nombre = nombre;
+    public void setnombres(String nombres) {
+        this.nombres = nombres;
     }
 
     public String getidentificacion() {
@@ -58,22 +73,20 @@ public class Miembro {
         this.identificacion = identificacion;
     }
 
-
-
-    public String getsexo() {
-        return sexo;
+    public String getapellidos() {
+        return apellidos;
     }
 
-    public void setsexo(String sexo) {
-        this.sexo = sexo;
+    public void setapellidos(String apellidos) {
+        this.apellidos = apellidos;
     }
 
-    public String getfechaNacimiento() {
-        return fechaNacimiento;
+    public int getedad() {
+        return edad;
     }
 
-    public void setfechaNacimiento(String fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+    public void setedad(int edad) {
+        this.edad = edad;
     }
 
     public String getdireccion() {
@@ -92,6 +105,29 @@ public class Miembro {
         this.telefono = telefono;
     }
 
+    public String getcategoria() {
+        return categoria;
+    }
 
+    public void setcategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public String getestado() {
+        return estado;
+    }
+
+    public void setestado(String estado) {
+        this.estado = estado;
+    }
+
+    public Date getfecharegistro() {
+        return fecharegistro;
+    }
+
+    public Date setfecharegistro(Date fecharegistro) {
+        this.fecharegistro = fecharegistro;
+        return null;
+    }
 
 }
