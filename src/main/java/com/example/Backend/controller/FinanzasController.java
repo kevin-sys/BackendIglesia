@@ -1,6 +1,6 @@
 package com.example.Backend.controller;
-import com.example.Backend.dao.MiembroService;
-import com.example.Backend.model.Miembro;
+import com.example.Backend.dao.FinanzasService;
+import com.example.Backend.model.Finanza;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -12,38 +12,38 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
-@RequestMapping({"/miembros"})
-public class MiembroController {
+@RequestMapping({"/finanzas"})
+public class FinanzasController {
+
     @Autowired
-    MiembroService service;
+    FinanzasService service;
+
     @GetMapping
-    public List<Miembro> Listar() {
+    public List<Finanza> Listar() {
         return service.listar();
     }
+
     @PostMapping
-    public Miembro Agregar(@RequestBody Miembro m) {
-        return service.add(m);
+    public Finanza Agregar(@RequestBody Finanza f) {
+        return service.add(f);
     }
 
     @GetMapping(path = {"/{id}"})
-    public Miembro listarId(@PathVariable("id") int id) {
+    public Finanza listarId(@PathVariable("id") int id) {
         return service.listarId(id);
     }
 
     @PutMapping(path = {"/{id}"})
-    public Miembro editar(@RequestBody Miembro m, @PathVariable("id") int id) {
-        m.setId(id);
-        return service.edit(m);
+    public Finanza editar(@RequestBody Finanza f, @PathVariable("id") int id) {
+        f.setId(id);
+        return service.edit(f);
     }
 
     @DeleteMapping(path = {"/{id}"})
-    public Miembro delete(@PathVariable("id") int id) {
+    public Finanza delete(@PathVariable("id") int id) {
         return service.delete(id);
     }
 }
-
-
-
-
