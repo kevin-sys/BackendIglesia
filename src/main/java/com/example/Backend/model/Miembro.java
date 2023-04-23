@@ -45,10 +45,6 @@ public class Miembro {
     @Column(name = "estado", nullable = false, length = 10)
     private String estado;
 
-    @Column(name = "fecharegistro")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date fecharegistro;
-
     public int getid() {
         return id;
     }
@@ -119,15 +115,6 @@ public class Miembro {
 
     public void setestado(String estado) {
         this.estado = estado;
-    }
-
-    public Date getfecharegistro() {
-        return fecharegistro;
-    }
-
-    public Date setfecharegistro(Date fecharegistro) {
-        this.fecharegistro = fecharegistro;
-        return null;
     }
 
 }
