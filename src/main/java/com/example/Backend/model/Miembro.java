@@ -16,19 +16,17 @@ import javax.persistence.Table;
 @Table(name = "miembro")
 public class Miembro {
     
-    @Id
-    @Column
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    
 
+    @Id
     @Column(name = "identificacion", nullable = false, length = 15)
     private String identificacion;
 
-    @Column(name = "nombres", nullable = false, length = 50)
-    private String nombres;
+    @Column(name = "nombre", nullable = false, length = 50)
+    private String nombre;
 
-    @Column(name = "apellidos", nullable = false, length = 50)
-    private String apellidos;
+    @Column(name = "apellido", nullable = false, length = 50)
+    private String apellido;
 
     @Column(name = "edad", nullable = false, scale = 2)
     private int edad;
@@ -45,20 +43,14 @@ public class Miembro {
     @Column(name = "estado", nullable = false, length = 10)
     private String estado;
 
-    public int getid() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+   
 
     public String getnombre() {
-        return nombres;
+        return nombre;
     }
 
-    public void setnombres(String nombres) {
-        this.nombres = nombres;
+    public void setnombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getidentificacion() {
@@ -69,12 +61,12 @@ public class Miembro {
         this.identificacion = identificacion;
     }
 
-    public String getapellidos() {
-        return apellidos;
+    public String getapellido() {
+        return apellido;
     }
 
-    public void setapellidos(String apellidos) {
-        this.apellidos = apellidos;
+    public void setapellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public int getedad() {
@@ -115,6 +107,14 @@ public class Miembro {
 
     public void setestado(String estado) {
         this.estado = estado;
+    }
+
+    public String getId() {
+        return identificacion;
+    }
+
+    public void setId(String identificacion) {
+        this.identificacion = identificacion;
     }
 
 }

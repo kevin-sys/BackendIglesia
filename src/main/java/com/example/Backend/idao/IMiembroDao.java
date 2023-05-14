@@ -8,7 +8,7 @@ public interface IMiembroDao extends Repository<Miembro, Integer> {
 
     List<Miembro> findAll();
 
-    Miembro findById(int id);
+    Miembro findByIdentificacion(String identificacion);
 
     Miembro save(Miembro m);
 

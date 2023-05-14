@@ -27,20 +27,20 @@ public class MiembroController {
         return service.add(m);
     }
 
-    @GetMapping(path = {"/{id}"})
-    public Miembro listarId(@PathVariable("id") int id) {
-        return service.listarId(id);
+    @GetMapping(path = {"/{identificacion}"})
+    public Miembro listarId(@PathVariable("identificacion") String identificacion) {
+        return service.listarId(identificacion);
     }
 
-    @PutMapping(path = {"/{id}"})
-    public Miembro editar(@RequestBody Miembro m, @PathVariable("id") int id) {
-        m.setId(id);
+    @PutMapping(path = {"/{identificacion}"})
+    public Miembro editar(@RequestBody Miembro m, @PathVariable("identificacion") String identificacion) {
+        m.setId(identificacion);
         return service.edit(m);
     }
 
-    @DeleteMapping(path = {"/{id}"})
-    public Miembro delete(@PathVariable("id") int id) {
-        return service.delete(id);
+    @DeleteMapping(path = {"/{identificacion}"})
+    public Miembro delete(@PathVariable("identificacion") String identificacion) {
+        return service.delete(identificacion);
     }
 }
 

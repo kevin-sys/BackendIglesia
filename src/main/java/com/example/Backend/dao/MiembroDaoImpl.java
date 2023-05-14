@@ -23,8 +23,8 @@ public class MiembroDaoImpl implements MiembroService {
     }
 
     @Override
-    public Miembro listarId(int id) {
-        return repositorio.findById(id);
+    public Miembro listarId(String identificacion) {
+        return repositorio.findByIdentificacion(identificacion);
     }
 
     @Override
@@ -33,8 +33,8 @@ public class MiembroDaoImpl implements MiembroService {
     }
 
     @Override
-    public Miembro delete(int id) {
-        Miembro m = repositorio.findById(id);
+    public Miembro delete(String identificacion) {
+        Miembro m = repositorio.findByIdentificacion(identificacion);
         if (m != null) {
             repositorio.delete(m);
         }

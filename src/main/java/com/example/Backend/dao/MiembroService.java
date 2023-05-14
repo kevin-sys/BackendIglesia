@@ -7,11 +7,11 @@ public interface MiembroService {
 
     List<Miembro> listar();
 
-    Miembro listarId(int id);
+    Miembro listarId(String identificacion);
 
     Miembro add(Miembro m);
 
     Miembro edit(Miembro m);
 
-    Miembro delete(int id);
+    Miembro delete(String identificacion);
 }
