@@ -28,7 +28,6 @@ public class FinanzasController {
     public List<Finanza> Listar() {
         return service.listar();
     }
-    
 
     @PostMapping
     public Finanza Agregar(@RequestBody Finanza f) {
