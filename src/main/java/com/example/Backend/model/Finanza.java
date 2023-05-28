@@ -34,7 +34,6 @@ public class Finanza {
     @Column(name = "tipo", nullable = false, length = 10)
     private String tipo;
 
-    // getters y setters
     public int getId() {
         return id;
     }

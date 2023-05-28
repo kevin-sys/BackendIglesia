@@ -57,8 +57,6 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
         .authorizeRequests()
         .antMatchers("/generate-token","/usuarios/").permitAll()
         .antMatchers(HttpMethod.OPTIONS).permitAll()
-        .antMatchers("/swagger-ui/**", "/swagger-resources/**", "/v2/api-docs", "/webjars/**").permitAll()
-        .antMatchers("/miembros/**", "/finanzas/**", "/directivas/**").permitAll()
         .anyRequest()
         .authenticated()
         .and()
