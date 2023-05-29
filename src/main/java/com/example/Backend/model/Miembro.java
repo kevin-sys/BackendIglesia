@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 
 @Data
 @AllArgsConstructor
@@ -15,8 +16,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "miembro")
 public class Miembro {
-    
-    
 
     @Id
     @Column(name = "identificacion", nullable = false, length = 15)
@@ -43,7 +42,9 @@ public class Miembro {
     @Column(name = "estado", nullable = false, length = 10)
     private String estado;
 
-   
+    @Column(name = "correo", nullable = false, length = 100)
+    @Email(message = "El campo 'correo' debe ser una dirección de correo electrónico válida")
+    private String correo;
 
     public String getnombre() {
         return nombre;
@@ -107,6 +108,14 @@ public class Miembro {
 
     public void setestado(String estado) {
         this.estado = estado;
+    }
+
+    public String getcorreo() {
+        return correo;
+    }
+
+    public void setcorreo(String correo) {
+        this.correo = correo;
     }
 
     public String getId() {

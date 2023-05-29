@@ -1,6 +1,8 @@
 package com.example.Backend.dao;
 
 import com.example.Backend.model.Miembro;
+import com.example.Backend.dao.EmailService;
+
 import java.util.List;
 
 public interface MiembroService {
